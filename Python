@@ -1,0 +1,13 @@
+  import json
+
+To read from and write to json file
+
+
+  f = open("fi","r")
+  a = json.load(f)
+  f.close()
+  
+  fw = open("fo","w")
+  json.dump(a,fw)
+  fw.close()
+
