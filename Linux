@@ -1,0 +1,8 @@
+# Important Codes if I forget,
+
+## Free cache memory htop
+`
+sudo su
+swapoff -a && swapon -a && sync; echo 1 > /proc/sys/vm/drop_caches && exit
+`
+
