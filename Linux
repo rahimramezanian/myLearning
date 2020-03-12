@@ -6,3 +6,27 @@ sudo su
 swapoff -a && swapon -a && sync; echo 1 > /proc/sys/vm/drop_caches && exit
 `
 
+## Add Shared Folder between two local user
+suppose there are 2 users: u1 and u2 
+First create a group G12
+`
+sudo su
+groupadd G12
+usermod -a -G G12 u1
+usermod -a -G G12 u2
+`
+
+Then create a folder sharedFolder
+`
+cd /home/u1/
+mkdir sharedFolder
+`
+
+Then add Permissions
+`
+chgrp G12 sharedFolder/ -R
+chmod g+w sharedFolder/ -R
+`
+
+
+
